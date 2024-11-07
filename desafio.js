@@ -66,8 +66,11 @@ class Heroi {
 }
 
 function main() {
-    let nome = prompt("Qual o nome do herói?");
-    let xp = parseInt(prompt("Qual o XP do herói?"));
+    /*let nome = prompt("Qual o nome do herói?");
+    let xp = parseInt(prompt("Qual o XP do herói?"))*/
+
+    const nome = process.argv[2];
+    const xp = process.argv[3];
     
     let heroi = new Heroi(nome, xp);
     console.log(`O Herói de nome ${heroi.nome} está no nível de ${heroi.nivel}`);
