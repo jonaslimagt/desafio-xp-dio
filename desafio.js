@@ -26,3 +26,51 @@ Se XP for maior ou igual a 10.001 = Radiante
 Ao final deve se exibir uma mensagem:
 "O Herói de nome **{nome}** está no nível de **{nivel}**"
 */
+
+class Heroi {
+    nome;
+    xp;
+    nivel;
+
+    constructor(nome, xp) {
+        this.nome = nome;
+        this.xp = xp;
+
+        switch (true) {
+            case this.xp  <= 1000:
+                this.nivel = "Ferro";
+                break;
+            case this.xp <= 2000:
+                this.nivel = "Bronze";
+                break;
+            case this.xp <= 5000:
+                this.nivel = "Prata";
+                break;
+            case this.xp <= 7000:
+                this.nivel = "Ouro";
+                break;
+            case this.xp <= 8000:
+                this.nivel = "Platina";
+                break;
+            case this.xp <= 9000:
+                this.nivel = "Ascendente";
+                break;
+            case this.xp <= 10000:
+                this.nivel = "Imortal";
+                break;
+            default:
+                this.nivel = "Radiante";
+                break;
+        }
+    }
+}
+
+function main() {
+    let nome = prompt("Qual o nome do herói?");
+    let xp = parseInt(prompt("Qual o XP do herói?"));
+    
+    let heroi = new Heroi(nome, xp);
+    console.log(`O Herói de nome ${heroi.nome} está no nível de ${heroi.nivel}`);
+}
+
+main();
